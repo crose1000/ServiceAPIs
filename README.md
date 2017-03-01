@@ -7,6 +7,7 @@ This project contains API Docs for MIT Press RESTful web services
 The following services are documented:
 
 Title Metadata Service<br/>
+ISBN Title ID Service<br/>
 TOC Service<br/>
 Content Service<br/>
 Search Service<br/>
