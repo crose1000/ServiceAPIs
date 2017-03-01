@@ -1,0 +1,119 @@
+I. Service: ISBN Title ID service
+
+	A. Service overview
+	
+		Host:	mitp-content-server.mit.edu
+		Port:	18080
+
+	B. ISBN Title ID service returns mappings between ISBNs for Bindings and Title Ids
+				
+	C. The ISBN Title ID service API
+	
+		APP_PATH:	/books/isbns/
+
+		Services:
+		
+			HTTP GET request to 
+	 	
+	 		get Info
+	 		
+			http://[host]:[port]/books/isbns/info/{titleid}
+			
+			get Title Id
+			
+			http://[host]:[port]/books/isbns/titleid/{isbn}
+			
+			get PrintIsbn
+
+			http://[host]:[port]/books/isbns/printisbn/{titleid}
+			
+			get CanonicalIsbn
+
+			http://[host]:[port]/books/isbns/canonisbn/{isbnIn}
+			
+			get Isbn by Type
+			
+			http://[host]:[port]/books/isbns/isbnbytype/{titleid}/{binding}
+			
+			get Isbn for Binding
+			
+			http://[host]:[port]/books/isbns/isbn/{isbnIn}/{binding}
+			
+	
+	D. Current service at
+	
+		get Info
+		
+		http://mitp-content-server.mit.edu:18180/books/isbns/info/6732
+		
+		get Title Id
+		
+		http://mitp-content-server.mit.edu:18180/books/isbns/titleid/{isbn}
+		
+		get PrintIsbn
+
+		http://mitp-content-server.mit.edu:18180/books/isbns/printisbn/{titleid}
+		
+		get CanonicalIsbn
+
+		http://mitp-content-server.mit.edu:18180/books/isbns/canonisbn/{isbnIn}
+		
+		get Isbn by Type
+		
+		http://mitp-content-server.mit.edu:18180/books/isbns/isbnbytype/{titleid}/{binding}
+		
+		get Isbn for Binding
+		
+		http://mitp-content-server.mit.edu:18180/books/isbns/isbn/{isbnIn}/{binding}
+		
+	E. Output
+	
+		---------------------------------------------------------------------------------
+		get Info
+		
+		http://mitp-content-server.mit.edu:18180/books/isbns/info/6732
+		
+		<info>pb = 9780262519113 el = 0 hc = 9780262071345 IDTitle = 6732 eb = 0 er = 0 </info>
+		
+		http://mitp-content-server.mit.edu:18180/books/isbns/info/5249
+		
+		<info>pb = 9780262512442 el = 9780262268875 hc = 9780262025683 IDTitle = 5249 eb = 0 er = 9780262261791 </info>
+		
+		---------------------------------------------------------------------------------
+		get Title Id
+		
+		http://mitp-content-server.mit.edu:18180/books/isbns/titleid/9780262071345
+		
+		<titleid>6732</titleid>
+		
+		---------------------------------------------------------------------------------
+		get PrintIsbn
+
+		http://mitp-content-server.mit.edu:18180/books/isbns/printisbn/6732
+		
+		<isbn>pb = 9780262519113 hc = 9780262071345</isbn>
+		
+		http://mitp-content-server.mit.edu:18180/books/isbns/printisbn/5249
+		
+		<isbn>pb = 9780262512442 hc = 9780262025683</isbn>
+		
+		---------------------------------------------------------------------------------
+		get CanonicalIsbn
+
+		http://mitp-content-server.mit.edu:18180/books/isbns/canonisbn/9780262268875
+		
+		9780262025683
+		
+		---------------------------------------------------------------------------------
+		get Isbn by Type
+		
+		http://mitp-content-server.mit.edu:18180/books/isbns/isbnbytype/5249/hc
+		
+		<isbn>hc = 9780262025683</isbn>
+		
+		---------------------------------------------------------------------------------
+		get Isbn for Binding
+		
+		http://mitp-content-server.mit.edu:18180/books/isbns/isbn/9780262268875/pb
+		
+		<isbn>pb = 9780262512442 </isbn>
